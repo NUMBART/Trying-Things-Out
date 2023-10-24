@@ -1,4 +1,11 @@
 package com.pandey.models;
 
-public class HuffBaseNode {
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
+public abstract class HuffBaseNode {
+    Integer weight;
+    public abstract boolean isLeaf();
 }

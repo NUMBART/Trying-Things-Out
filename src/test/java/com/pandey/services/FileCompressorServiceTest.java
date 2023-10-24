@@ -1,22 +1,21 @@
-package com.pandey.service;
+package com.pandey.services;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.HashMap;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class FileCompressorTest {
+class FileCompressorServiceTest {
     @Test
     void testScanCharacterCount() {
         try {
-            HashMap<Character, Integer> charFreq = FileCompressor.scanCharacterCount(new File("src/main/resources/LesMiserablesByVictorHugo.txt"));
+            HashMap<Character, Integer> charFreq = FileCompressorService.scanCharacterCount(new File("src/main/resources/LesMiserablesByVictorHugo.txt"));
             Assertions.assertEquals(333, charFreq.get('X'));
             Assertions.assertEquals(223000, charFreq.get('t'));
-        } catch(FileNotFoundException ex) {
+        } catch(IOException ex) {
             System.out.println("Add input file to run test");
         }
     }
